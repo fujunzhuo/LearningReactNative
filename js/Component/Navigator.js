@@ -1,11 +1,9 @@
-import React, { Component,PropTypes } from 'react';
+import React, { Component } from 'react';
 import {
-    AppRegistry,
     StyleSheet,
     Text,
     View,
     Navigator,
-    TouchableHighlight
 } from 'react-native';
 
 import MyScene from '../Other/MyScene';

@@ -14,7 +14,8 @@ import {
 } from 'react-native';
 
 import {
-  Navigator1
+  Navigator1,
+  ActivityIndicator1,
 }  from './js/Component1';
 
 
@@ -25,7 +26,7 @@ import {
 export default class LearningReactNative extends Component {
   render() {
     return (
-        <Navigator1 />
+        <ActivityIndicator1 />
     );
   }
 }
