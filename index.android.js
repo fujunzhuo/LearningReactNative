@@ -13,7 +13,9 @@ import {
   Navigator
 } from 'react-native';
 
-import Navigator1 from './js/Component/Navigator';
+import {
+  Navigator1
+}  from './js/Component1';
 
 
 

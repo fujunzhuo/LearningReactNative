@@ -1,8 +1,8 @@
 'use strict';
-
-var Component = {
-    Navigator1:require('./Component/Navigator')
+import Navigator1 from './Component/Navigator';
+var Component1 = {
+    Navigator1:Navigator1
 }
 
 
-module.exports = Component;
+module.exports = Component1;
