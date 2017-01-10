@@ -53,7 +53,14 @@ export default class ActivityIndicator1 extends Component {
     render(){
         return(
         <View>
-            {exports.examples[0]}
+            {exports.examples[0].render()}
+            {exports.examples[1].render()}
+            {exports.examples[2].render()}
+            {exports.examples[3].render()}
+            {exports.examples[4].render()}
+            {exports.examples[5].render()}
+            {exports.examples[6].render()}
+            {exports.examples[7].render()}
         </View>
         );
     }
