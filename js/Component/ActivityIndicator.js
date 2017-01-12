@@ -53,6 +53,7 @@ export default class ActivityIndicator1 extends Component {
     render(){
         return(
         <View>
+{/*
             {exports.examples[0].render()}
             {exports.examples[1].render()}
             {exports.examples[2].render()}
@@ -61,6 +62,8 @@ export default class ActivityIndicator1 extends Component {
             {exports.examples[5].render()}
             {exports.examples[6].render()}
             {exports.examples[7].render()}
+*/}
+            <ToggleAnimatingActivityIndicator />
         </View>
         );
     }
@@ -159,7 +162,7 @@ exports.examples = [
         render() {
             return (
                 <ActivityIndicator
-                    style={[styles.centering, {transform: [{scale: 1.5}]}]}
+                    style={[styles.centering, {transform: [{scale: 2}]}]}
                     size="large"
                 />
             );
@@ -172,7 +175,8 @@ exports.examples = [
             return (
                 <ActivityIndicator
                     style={styles.centering}
-                    size={75}
+                    size={120}
+                    color="red"
                 />
             );
         }
@@ -184,7 +188,7 @@ const styles = StyleSheet.create({
     centering: {
         alignItems: 'center',
         justifyContent: 'center',
-        padding: 8,
+        padding: 10,
     },
     gray: {
         backgroundColor: '#cccccc',

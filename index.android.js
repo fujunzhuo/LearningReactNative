@@ -16,6 +16,8 @@ import {
 import {
   Navigator1,
   ActivityIndicator1,
+  DatePickerIOS1,
+  DrawerLayoutAndroid1,
 }  from './js/Component1';
 
 
@@ -26,7 +28,7 @@ import {
 export default class LearningReactNative extends Component {
   render() {
     return (
-        <ActivityIndicator1 />
+        <DrawerLayoutAndroid1 />
     );
   }
 }
