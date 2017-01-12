@@ -90,6 +90,8 @@ const styles = StyleSheet.create({
     img:{
         width:80,
         height:80,
+        marginTop:10,
+        marginRight:10
     },
 
 });

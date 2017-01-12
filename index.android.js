@@ -21,6 +21,7 @@ import {
     Image1,
     KeyboardAvoidingView1,
     ListView1,
+    MapView1,
 }  from './js/Component1';
 
 
@@ -31,7 +32,7 @@ import {
 export default class LearningReactNative extends Component {
   render() {
     return (
-        <ListView1 />
+        <MapView1 />
     );
   }
 }

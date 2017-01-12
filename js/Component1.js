@@ -6,6 +6,7 @@ import DrawerLayoutAndroid1 from './Component/DrawerLayoutAndroid';
 import Image1 from './Component/Image';
 import KeyboardAvoidingView1 from './Component/KeyboardAvoidingView';
 import ListView1 from './Component/ListView';
+import MapView1 from './Component/MapView';
 var Component1 = {
     Navigator1:Navigator1,//导航器
     ActivityIndicator1:ActivityIndicator1,//显示一个圆形的loading提示符号
@@ -14,6 +15,7 @@ var Component1 = {
     Image1:Image1,//
     KeyboardAvoidingView1:KeyboardAvoidingView1,//本组件可以自动根据键盘的位置，调整自身的position或底部的padding，以避免被遮挡
     ListView1:ListView1,
+    MapView1:MapView1,
 }
 
 
