@@ -22,17 +22,15 @@ import {
     KeyboardAvoidingView1,
     ListView1,
     MapView1,
+    ReactNativeMaps,
+    Modal1,
 }  from './js/Component1';
-
-
-
-
 
 
 export default class LearningReactNative extends Component {
   render() {
     return (
-        <MapView1 />
+        <Modal1/>
     );
   }
 }
