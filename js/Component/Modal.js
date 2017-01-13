@@ -90,7 +90,8 @@ var ModalExample = React.createClass({
                 >
                     <View style={[styles.container, modalBackgroundStyle]}>
                         <View style={[styles.innerContainer, innerContainerTransparentStyle]}>
-                            <Text>This modal was presented {this.state.animationType === 'none' ? 'without' : 'with'} animation.</Text>
+                            <Text>This modal was presented {this.state.animationType === 'none' ? 'without' : 'with'}
+                                animation.</Text>
                             <Button
                                 onPress={this._setModalVisible.bind(this, false)}
                                 style={styles.modalButton}>
@@ -101,20 +102,23 @@ var ModalExample = React.createClass({
                 </Modal>
                 <View style={styles.row}>
                     <Text style={styles.rowTitle}>Animation Type</Text>
-                    <Button onPress={this._setAnimationType.bind(this, 'none')} style={this.state.animationType === 'none' ? activeButtonStyle : {}}>
+                    <Button onPress={this._setAnimationType.bind(this, 'none')}
+                            style={this.state.animationType === 'none' ? activeButtonStyle : {}}>
                         none
                     </Button>
-                    <Button onPress={this._setAnimationType.bind(this, 'slide')} style={this.state.animationType === 'slide' ? activeButtonStyle : {}}>
+                    <Button onPress={this._setAnimationType.bind(this, 'slide')}
+                            style={this.state.animationType === 'slide' ? activeButtonStyle : {}}>
                         slide
                     </Button>
-                    <Button onPress={this._setAnimationType.bind(this, 'fade')} style={this.state.animationType === 'fade' ? activeButtonStyle : {}}>
+                    <Button onPress={this._setAnimationType.bind(this, 'fade')}
+                            style={this.state.animationType === 'fade' ? activeButtonStyle : {}}>
                         fade
                     </Button>
                 </View>
 
                 <View style={styles.row}>
                     <Text style={styles.rowTitle}>Transparent</Text>
-                    <Switch value={this.state.transparent} onValueChange={this._toggleTransparent} />
+                    <Switch value={this.state.transparent} onValueChange={this._toggleTransparent}/>
                 </View>
 
                 <Button onPress={this._setModalVisible.bind(this, true)}>
@@ -124,7 +128,6 @@ var ModalExample = React.createClass({
         );
     },
 });
-
 
 
 exports.examples = [
@@ -174,9 +177,7 @@ var styles = StyleSheet.create({
 });
 
 
-
-
-class ModalExample1 extends Component {
+class ModalExample1 extends React.Component {
 
     constructor(props) {
         super(props);
@@ -189,30 +190,22 @@ class ModalExample1 extends Component {
 
     render() {
         return (
-            <View style={{marginTop: 22}}>
+            <View style={{marginTop: 100}}>
                 <Modal
                     animationType={"slide"}
                     transparent={false}
                     visible={this.state.modalVisible}
-                    onRequestClose={() => {alert("Modal has been closed.")}}
-                >
+                    onRequestClose={() => {alert("Modal has been closed.")}}>
                     <View style={{marginTop: 22}}>
                         <View>
                             <Text>Hello World!</Text>
-
-                            <TouchableHighlight onPress={() => {
-              this.setModalVisible(!this.state.modalVisible)
-            }}>
+                            <TouchableHighlight onPress={() => { this.setModalVisible(!this.state.modalVisible) }}>
                                 <Text>Hide Modal</Text>
                             </TouchableHighlight>
-
                         </View>
                     </View>
                 </Modal>
-
-                <TouchableHighlight onPress={() => {
-          this.setModalVisible(true)
-        }}>
+                <TouchableHighlight onPress={() => {this.setModalVisible(true) }}>
                     <Text>Show Modal</Text>
                 </TouchableHighlight>
 
@@ -222,4 +215,11 @@ class ModalExample1 extends Component {
 }
 
 
-module.exports = ModalExample1;
+module.exports = () => {
+    return(
+        <View>
+            <ModalExample />
+            <ModalExample1 />
+        </View>
+    );
+} ;

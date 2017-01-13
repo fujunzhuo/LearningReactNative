@@ -1,12 +1,13 @@
 'use strict';
 
-var React = require('react');
+import React,{ Component } from 'react';
 var ReactNative = require('react-native');
 var {
     StyleSheet,
     Text,
     View,
     Image
+
 } = ReactNative;
 
 var ReactNativeMaps = require('react-native-maps');

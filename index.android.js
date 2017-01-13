@@ -30,7 +30,7 @@ import {
 export default class LearningReactNative extends Component {
   render() {
     return (
-        <Modal1/>
+        <Modal1 />
     );
   }
 }
