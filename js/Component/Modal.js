@@ -4,6 +4,7 @@ var React = require('react');
 var ReactNative = require('react-native');
 var {
     Modal,
+    Picker,
     StyleSheet,
     Switch,
     Text,
@@ -11,25 +12,25 @@ var {
     View,
 } = ReactNative;
 
+const Item = Picker.Item;
+
 exports.displayName = (undefined: ?string);
 exports.framework = 'React';
 exports.title = '<Modal>';
 exports.description = 'Component for presenting modal views.';
 
-var Button = React.createClass({
-    getInitialState() {
-        return {
-            active: false,
-        };
-    },
+class Button extends React.Component {
+    state = {
+        active: false,
+    };
 
-    _onHighlight() {
+    _onHighlight = () => {
         this.setState({active: true});
-    },
+    };
 
-    _onUnhighlight() {
+    _onUnhighlight = () => {
         this.setState({active: false});
-    },
+    };
 
     render() {
         var colorStyle = {
@@ -46,28 +47,37 @@ var Button = React.createClass({
             </TouchableHighlight>
         );
     }
-});
+}
 
-var ModalExample = React.createClass({
-    getInitialState() {
-        return {
-            animationType: 'none',
-            modalVisible: false,
-            transparent: false,
-        };
-    },
+const supportedOrientationsPickerValues = [
+    ['portrait'],
+    ['landscape'],
+    ['landscape-left'],
+    ['portrait', 'landscape-right'],
+    ['portrait', 'landscape'],
+    [],
+];
 
-    _setModalVisible(visible) {
+class ModalExample extends React.Component {
+    state = {
+        animationType: 'none',
+        modalVisible: false,
+        transparent: false,
+        selectedSupportedOrientation: 0,
+        currentOrientation: 'unknown',
+    };
+
+    _setModalVisible = (visible) => {
         this.setState({modalVisible: visible});
-    },
+    };
 
-    _setAnimationType(type) {
+    _setAnimationType = (type) => {
         this.setState({animationType: type});
-    },
+    };
 
-    _toggleTransparent() {
+    _toggleTransparent = () => {
         this.setState({transparent: !this.state.transparent});
-    },
+    };
 
     render() {
         var modalBackgroundStyle = {
@@ -86,12 +96,14 @@ var ModalExample = React.createClass({
                     animationType={this.state.animationType}
                     transparent={this.state.transparent}
                     visible={this.state.modalVisible}
-                    onRequestClose={() => {this._setModalVisible(false)}}
+                    onRequestClose={() => this._setModalVisible(false)}
+                    supportedOrientations={supportedOrientationsPickerValues[this.state.selectedSupportedOrientation]}
+                    onOrientationChange={evt => this.setState({currentOrientation: evt.nativeEvent.orientation})}
                 >
                     <View style={[styles.container, modalBackgroundStyle]}>
                         <View style={[styles.innerContainer, innerContainerTransparentStyle]}>
-                            <Text>This modal was presented {this.state.animationType === 'none' ? 'without' : 'with'}
-                                animation.</Text>
+                            <Text>This modal was presented {this.state.animationType === 'none' ? 'without' : 'with'} animation.</Text>
+                            <Text>It is currently displayed in {this.state.currentOrientation} mode.</Text>
                             <Button
                                 onPress={this._setModalVisible.bind(this, false)}
                                 style={styles.modalButton}>
@@ -102,23 +114,36 @@ var ModalExample = React.createClass({
                 </Modal>
                 <View style={styles.row}>
                     <Text style={styles.rowTitle}>Animation Type</Text>
-                    <Button onPress={this._setAnimationType.bind(this, 'none')}
-                            style={this.state.animationType === 'none' ? activeButtonStyle : {}}>
+                    <Button onPress={this._setAnimationType.bind(this, 'none')} style={this.state.animationType === 'none' ? activeButtonStyle : {}}>
                         none
                     </Button>
-                    <Button onPress={this._setAnimationType.bind(this, 'slide')}
-                            style={this.state.animationType === 'slide' ? activeButtonStyle : {}}>
+                    <Button onPress={this._setAnimationType.bind(this, 'slide')} style={this.state.animationType === 'slide' ? activeButtonStyle : {}}>
                         slide
                     </Button>
-                    <Button onPress={this._setAnimationType.bind(this, 'fade')}
-                            style={this.state.animationType === 'fade' ? activeButtonStyle : {}}>
+                    <Button onPress={this._setAnimationType.bind(this, 'fade')} style={this.state.animationType === 'fade' ? activeButtonStyle : {}}>
                         fade
                     </Button>
                 </View>
 
                 <View style={styles.row}>
                     <Text style={styles.rowTitle}>Transparent</Text>
-                    <Switch value={this.state.transparent} onValueChange={this._toggleTransparent}/>
+                    <Switch value={this.state.transparent} onValueChange={this._toggleTransparent} />
+                </View>
+
+                <View>
+                    <Text style={styles.rowTitle}>Supported orientations</Text>
+                    <Picker
+                        selectedValue={this.state.selectedSupportedOrientation}
+                        onValueChange={(_, i) => this.setState({selectedSupportedOrientation: i})}
+                        itemStyle={styles.pickerItem}
+                    >
+                        <Item label="Portrait" value={0} />
+                        <Item label="Landscape" value={1} />
+                        <Item label="Landscape left" value={2} />
+                        <Item label="Portrait and landscape right" value={3} />
+                        <Item label="Portrait and landscape" value={4} />
+                        <Item label="Default supportedOrientations" value={5} />
+                    </Picker>
                 </View>
 
                 <Button onPress={this._setModalVisible.bind(this, true)}>
@@ -126,9 +151,11 @@ var ModalExample = React.createClass({
                 </Button>
             </View>
         );
-    },
-});
+    }
+}
 
+
+module.exports = ModalExample;
 
 exports.examples = [
     {
@@ -137,6 +164,8 @@ exports.examples = [
         render: () => <ModalExample />,
     },
 ];
+
+
 
 var styles = StyleSheet.create({
     container: {
@@ -160,7 +189,7 @@ var styles = StyleSheet.create({
     },
     button: {
         borderRadius: 5,
-        flex: 1,
+        flexGrow: 1,
         height: 44,
         alignSelf: 'stretch',
         justifyContent: 'center',
@@ -174,52 +203,7 @@ var styles = StyleSheet.create({
     modalButton: {
         marginTop: 10,
     },
+    pickerItem: {
+        fontSize: 16,
+    },
 });
-
-
-class ModalExample1 extends React.Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {modalVisible: false};
-    }
-
-    setModalVisible(visible) {
-        this.setState({modalVisible: visible});
-    }
-
-    render() {
-        return (
-            <View style={{marginTop: 100}}>
-                <Modal
-                    animationType={"slide"}
-                    transparent={false}
-                    visible={this.state.modalVisible}
-                    onRequestClose={() => {alert("Modal has been closed.")}}>
-                    <View style={{marginTop: 22}}>
-                        <View>
-                            <Text>Hello World!</Text>
-                            <TouchableHighlight onPress={() => { this.setModalVisible(!this.state.modalVisible) }}>
-                                <Text>Hide Modal</Text>
-                            </TouchableHighlight>
-                        </View>
-                    </View>
-                </Modal>
-                <TouchableHighlight onPress={() => {this.setModalVisible(true) }}>
-                    <Text>Show Modal</Text>
-                </TouchableHighlight>
-
-            </View>
-        );
-    }
-}
-
-
-module.exports = () => {
-    return(
-        <View>
-            <ModalExample />
-            <ModalExample1 />
-        </View>
-    );
-} ;

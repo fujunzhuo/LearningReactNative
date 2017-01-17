@@ -2,6 +2,8 @@ import React, { Component, PropTypes} from 'react';
 import {
     View,
     Text,
+    Image,
+    StyleSheet,
     TouchableHighlight
 } from 'react-native';
 
@@ -21,10 +23,22 @@ export default class MyScene extends Component {
                 <TouchableHighlight onPress={this.props.onBack}>
                     <Text>点我返回上一场景</Text>
                 </TouchableHighlight>
-                <Text>
-                    asdfasdfsad
-                </Text>
+                <View style={styles.view}>
+                    <Image source={require('../img/01.jpg')} style={styles.img} />
+                </View>
+
             </View>
         )
     }
 }
+
+const styles = StyleSheet.create({
+    img:{
+        width:200,
+        height:200,
+    },
+    view:{
+        backgroundColor:'red',
+        height:500,
+    }
+});
