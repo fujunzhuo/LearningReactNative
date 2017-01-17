@@ -16,6 +16,8 @@ import Slider1 from './Component/Slider';
 import StatusBar1 from './Component/StatusBar';
 import Switch1 from './Component/Switch';
 import Text1 from './Component/Text';
+import TextInput1 from './Component/TextInput';
+import ToolbarAndroid1 from './Component/ToolbarAndroid';
 var Component1 = {
     Navigator1:Navigator1,//导航器
     ActivityIndicator1:ActivityIndicator1,//显示一个圆形的loading提示符号
@@ -32,6 +34,8 @@ var Component1 = {
     Slider1:Slider1,  //
     StatusBar1:StatusBar1,  //
     Text1:Text1,  //
+    TextInput1:TextInput1,  //
+    ToolbarAndroid1:ToolbarAndroid1,  //
 }
 
 

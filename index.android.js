@@ -31,13 +31,15 @@ import {
     StatusBar1,
     Switch1,
     Text1,
+    TextInput1,
+    ToolbarAndroid1,
 }  from './js/Component1';
 
 
 export default class LearningReactNative extends Component {
   render() {
     return (
-        <Text1 />
+        <ToolbarAndroid1 />
     );
   }
 }
