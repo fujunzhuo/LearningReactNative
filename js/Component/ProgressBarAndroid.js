@@ -1,6 +1,5 @@
 'use strict';
 
-const UIExplorer_DIR = '../../Examples/UIExplorer/js/';
 
 var ProgressBar = require('ProgressBarAndroid');
 var React = require('React');

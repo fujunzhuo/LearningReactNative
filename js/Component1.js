@@ -12,6 +12,10 @@ import Modal1 from './Component/Modal';
 import Picker1 from './Component/Picker';
 import ProgressBarAndroid1 from './Component/ProgressBarAndroid';
 import RefreshControl1 from './Component/RefreshControl';
+import Slider1 from './Component/Slider';
+import StatusBar1 from './Component/StatusBar';
+import Switch1 from './Component/Switch';
+import Text1 from './Component/Text';
 var Component1 = {
     Navigator1:Navigator1,//导航器
     ActivityIndicator1:ActivityIndicator1,//显示一个圆形的loading提示符号
@@ -25,6 +29,9 @@ var Component1 = {
     Picker1:Picker1,  //下拉框
     ProgressBarAndroid1:ProgressBarAndroid1,  //这个组件可以用来表示应用正在加载或者有些事情正在进行中。
     RefreshControl1:RefreshControl1,  //下拉刷新
+    Slider1:Slider1,  //
+    StatusBar1:StatusBar1,  //
+    Text1:Text1,  //
 }
 
 
