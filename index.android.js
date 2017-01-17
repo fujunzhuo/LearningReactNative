@@ -24,14 +24,21 @@ import {
   MapView1,
   ReactNativeMaps,
   Modal1,
+  Picker1,
+  ProgressBarAndroid1,
+  RefreshControl1,
 }  from './js/Component1';
 
+
+import {
+    WebViewExample1,
+} from './js/UIExplorer';
 
 
 export default class LearningReactNative extends Component {
   render() {
     return (
-        <Navigator1 />
+        <WebViewExample1 />
     );
   }
 }

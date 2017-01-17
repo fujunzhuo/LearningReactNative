@@ -13,8 +13,10 @@ const {
     View,
 } = ReactNative;
 
-const UIExplorerBlock = require('../Other/UIExplorerBlock');
-const UIExplorerPage = require('../Other/UIExplorerPage');
+/*
+const UIExplorer_DIR = '../../Examples/UIExplorer/js/';
+const UIExplorerBlock = require( UIExplorer_DIR + 'UIExplorerBlock');
+const UIExplorerPage = require( UIExplorer_DIR + 'UIExplorerPage');*/
 
 class KeyboardAvoidingViewExample extends React.Component {
     static title = '<KeyboardAvoidingView>';
@@ -59,11 +61,9 @@ class KeyboardAvoidingViewExample extends React.Component {
 
     render() {
         return (
-            <UIExplorerPage title="Keyboard Avoiding View">
-                <UIExplorerBlock title="Keyboard-avoiding views move out of the way of the keyboard.">
-                    {this.renderExample()}
-                </UIExplorerBlock>
-            </UIExplorerPage>
+            <View>
+                {this.renderExample()}
+            </View>
         );
     }
 }
