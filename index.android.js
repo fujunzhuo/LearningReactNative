@@ -42,11 +42,16 @@ import {
     WebView1,
 }  from './js/Component1';
 
+import {
+    ActionSheetIOS1,
+    Animated1,
+}  from './js/Api';
+
 
 export default class LearningReactNative extends Component {
   render() {
     return (
-        <WebView1 />
+        <Animated1 />
     );
   }
 }
