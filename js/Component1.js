@@ -18,6 +18,13 @@ import Switch1 from './Component/Switch';
 import Text1 from './Component/Text';
 import TextInput1 from './Component/TextInput';
 import ToolbarAndroid1 from './Component/ToolbarAndroid';
+import TouchableHighlight1 from './Component/TouchableHighlight';
+import TouchableNativeFeedback1 from './Component/TouchableNativeFeedback';
+import TouchableOpacity1 from './Component/TouchableOpacity';
+import TouchableWithoutFeedback1 from './Component/TouchableWithoutFeedback';
+import View1 from './Component/View';
+import ViewPagerAndroid1 from './Component/ViewPagerAndroid';
+import WebView1 from './Component/WebView';
 var Component1 = {
     Navigator1:Navigator1,//导航器
     ActivityIndicator1:ActivityIndicator1,//显示一个圆形的loading提示符号
@@ -36,6 +43,11 @@ var Component1 = {
     Text1:Text1,  //
     TextInput1:TextInput1,  //
     ToolbarAndroid1:ToolbarAndroid1,  //
+    TouchableHighlight1:TouchableHighlight1,  //
+    TouchableOpacity1:TouchableOpacity1,  //
+    View1:View1,  //
+    ViewPagerAndroid1:ViewPagerAndroid1,  //
+    WebView1:WebView1,  //
 }
 
 

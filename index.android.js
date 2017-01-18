@@ -33,13 +33,20 @@ import {
     Text1,
     TextInput1,
     ToolbarAndroid1,
+    TouchableHighlight1,
+    TouchableNativeFeedback1,
+    TouchableOpacity1,
+    TouchableWithoutFeedback1,
+    View1,
+    ViewPagerAndroid1,
+    WebView1,
 }  from './js/Component1';
 
 
 export default class LearningReactNative extends Component {
   render() {
     return (
-        <ToolbarAndroid1 />
+        <WebView1 />
     );
   }
 }
