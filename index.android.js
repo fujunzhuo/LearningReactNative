@@ -45,13 +45,14 @@ import {
 import {
     ActionSheetIOS1,
     Animated1,
+    CameraRoll1,
 }  from './js/Api';
 
 
 export default class LearningReactNative extends Component {
   render() {
     return (
-        <Animated1 />
+        <CameraRoll1 />
     );
   }
 }
